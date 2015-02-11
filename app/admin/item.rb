@@ -1,4 +1,5 @@
 ActiveAdmin.register Item do
+  permit_params :name, :location, :price, :description, :terms_and_conditions
 
 
   # See permitted parameters documentation:
