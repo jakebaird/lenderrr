@@ -1,37 +1,44 @@
-<h1>Listing items</h1>
-
-<table>
+<%- model_class = Item -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Item %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th>Price</th>
-      <th>Description</th>
-      <th>Terms and conditions</th>
-      <th>User</th>
-      <th>Item</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:location) %></th>
+      <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:terms_and_conditions) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @items.each do |item| %>
       <tr>
+        <td><%= item.id %></td>
         <td><%= item.name %></td>
         <td><%= item.location %></td>
         <td><%= item.price %></td>
         <td><%= item.description %></td>
         <td><%= item.terms_and_conditions %></td>
-        <td><%= item.user %></td>
-        <td><%= item.item %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l item.created_at, format: :long %></td>
+        <td>
+          <%= link_to item_path(item), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to item_path(item), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Item', new_item_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_item_path,
+            :class => 'btn btn-primary' %>
