@@ -32,6 +32,9 @@ gem 'bootstrap-sass-extras'
 # tools
 gem 'tzinfo-data'
 gem 'validates_formatting_of'
+gem 'kaminari'
+gem 'simple_form'
+gem 'nested_form'
 
 
 # bundle exec rake doc:rails generates the API under doc/api.
