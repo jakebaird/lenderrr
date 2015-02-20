@@ -1,0 +1,53 @@
+/ Fullscreen Slider
+#home
+  .tp-banner-container
+    .tp-banner
+      %ul
+        / Slide 1
+        %li{"data-transition" => "slideright"}
+          = image_tag 'slider/slide-1.jpg'
+          / Caption
+          .tp-caption.finewide_large_white{"data-easing" => "easeOutExpo", "data-speed" => "1000", "data-start" => "700", "data-x" => "center", "data-y" => "50"}
+            = image_tag 'slider/bg-logo.png'
+
+          / Caption
+          .tp-caption.finewide_large_white{"data-easing" => "easeOutExpo", "data-speed" => "1000", "data-start" => "700", "data-x" => "center", "data-y" => "180"}
+            %h3.rev-title.bold
+
+          / Caption
+          .tp-caption.finewide_small_white{"data-easing" => "easeOutExpo", "data-speed" => "1500", "data-start" => "900", "data-x" => "center", "data-y" => "280"}
+            Earn from Items you don't use
+
+          / Caption
+          .caption{"data-easing" => "easeOutExpo", "data-speed" => "1100", "data-start" => "1500", "data-x" => "center", "data-y" => "350"}
+            %a.btn.btn-primary.btn-wide{"data-easing" => "easeOutQuint", "data-scroll" => "", "data-speed" => "2000", "data-url" => "true", :href => "index2.html#about"}
+              Lend Your Stuff
+            %a.btn.btn-primary.btn-wide{"data-easing" => "easeOutQuint", "data-scroll" => "", "data-speed" => "2000", "data-url" => "true", :href => "index2.html#about"}
+              Borrow Something
+
+        / Slide 2
+        %li{"data-transition" => "random"}
+          = image_tag 'slider/slide-1.jpg'
+          / Caption
+          .tp-caption.finewide_large_white{"data-easing" => "fadefromright", "data-speed" => "1700", "data-start" => "700", "data-x" => "right", "data-y" => "50"}
+            = image_tag 'slider/devices.png'
+          / Caption
+          .tp-caption.finewide_medium_white{"data-easing" => "easeOutExpo", "data-speed" => "1000", "data-start" => "700", "data-x" => "left", "data-y" => "50"}
+            %h3.rev-title.bold Flaone Clean Theme
+          / Caption
+          .tp-caption.finewide_small_white{"data-easing" => "fadefromleft", "data-speed" => "1500", "data-start" => "900", "data-x" => "left", "data-y" => "200"}
+            Retina & Responsive Ready
+          / Caption
+          .tp-caption.finewide_small_white{"data-easing" => "fadefromleft", "data-speed" => "1500", "data-start" => "1100", "data-x" => "left", "data-y" => "250"}
+            Modern Design
+          / Caption
+          .tp-caption.finewide_small_white{"data-easing" => "fadefromleft", "data-speed" => "1500", "data-start" => "1300", "data-x" => "left", "data-y" => "300"}
+            Parallax Backgrounds
+          / Caption
+          .caption{"data-easing" => "easeOutExpo", "data-speed" => "1100", "data-start" => "1500", "data-x" => "left", "data-y" => "380"}
+            %a.btn.btn-primary.btn-wide{"data-easing" => "easeOutQuint", "data-scroll" => "", "data-speed" => "2000", "data-url" => "true", :href => "index2.html#about"} Get Started
+      .tp-bannertimer.tp-bottom
+
+/ Search Results
+.container
+  %h1 Insert Search Results Here
