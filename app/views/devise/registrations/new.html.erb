@@ -1,0 +1,20 @@
+
+  <h1><%=t ".title", default: "Sign Up" %></h1>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+    <%= f.label :username %>
+    <%= f.text_field :username, html: {spellcheck: "false"} %>
+    <%= f.label :email %>
+    <%= f.email_field :email, html: {spellcheck: "false"} %>
+    <%= f.label :password %>
+    <%= f.password_field :password, html: {autocomplete: "off"} %>
+    <%= f.label :password_confirmation, "Password Confirmation" %>
+    <%= f.password_field :password_confirmation, html: {autocomplete: "off"} %>
+
+    <%= f.submit "Sign Up" %>
+
+    <%= render "devise/shared/links" %>
+
+<% end %>
+
