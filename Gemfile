@@ -24,9 +24,10 @@ gem 'therubyracer',  platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'slim-rails'
+gem 'haml-rails'
 gem 'bootstrap-sass', github: 'twbs/bootstrap-sass'
 gem 'bootstrap-sass-extras'
+gem 'font-awesome-rails'
 
 
 # tools
