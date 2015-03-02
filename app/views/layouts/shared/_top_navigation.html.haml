@@ -1,0 +1,51 @@
+%nav#sticker.navbar.navbar-default.navbar-static-top.navbar-lg{role: "navigation"}
+  .container
+    .navbar-header.centerMrgn
+      %button.navbar-toggle{"data-target" => "#navbar-collapse-01", "data-toggle" => "collapse", type: "button"}
+        %span.sr-only Toggle navigation
+      %a.navbar-brand{"data-easing" => "easeOutQuint", "data-scroll" => "", "data-speed" => "2000", "data-url" => "true", href: "index2.html#home"} Lenderrr
+    #navbar-collapse-01.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a.popup-text{"data-effect" => "mfp-move-from-top", "data-target" => "#signup", "data-toggle" => "modal", href: "#login-dialog"} Login
+        %li
+          %a.popup-text{"data-effect" => "mfp-move-from-top", "data-target" => "#login", "data-toggle" => "modal", href: "#login-dialog"} Sign up
+
+#signup.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal", type: "button"}
+          %span{"aria-hidden" => "true"} ×
+          %span.sr-only Close
+        %h4#myModalLabel.modal-title Member Login
+      .modal-body
+        .row-fluid
+          = render partial: 'devise/sessions/new'
+
+#login.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal", type: "button"}
+          %span{"aria-hidden" => "true"} ×
+          %span.sr-only Close
+        %center
+          %h4#myModalLabel.modal-title Welcome To Lenderrr
+          %br/
+          %button.btn.btn-success.btn-lg{type: "button"}
+            Login With Facebook
+      .modal-body
+        .row
+          .col-md-6
+            %h6 Regsister
+            %p
+              = render partial: 'devise/registrations/new'
+          .col-md-6
+            %h6 Login
+            %p
+              = render partial: 'devise/sessions/new'
+
+        .row-fluid
+
+    
