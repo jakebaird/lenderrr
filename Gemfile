@@ -35,10 +35,6 @@ gem 'simple_form'
 gem 'nested_form'
 
 
-# server
-gem 'thin'
-
-
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
@@ -49,6 +45,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'quiet_assets'
   gem 'byebug'
+  gem 'thin'
 end
 
 group :production do
