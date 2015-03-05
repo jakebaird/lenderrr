@@ -2,7 +2,10 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-        :recoverable, :rememberable, :trackable, :validatable, :confirmable
+        :recoverable, :rememberable, :trackable, :validatable, :confirmable 
+
+  devise authentication_keys: [:login]
+
   devise :omniauthable, omniauth_providers: [:facebook]
 
   #->Prelang (user_login/devise)
@@ -28,6 +31,9 @@ class User < ActiveRecord::Base
 
 
   attr_accessor :login
+
+  validates :username,  :presence => true,
+                        :uniqueness => { :case_sensitive => false }
   
   #->Prelang (user_login:devise/username_login_support)
   def self.find_first_by_auth_conditions(warden_conditions)
@@ -39,6 +45,4 @@ class User < ActiveRecord::Base
     end
   end
 
-
-  devise authentication_keys: [:login]
 end
