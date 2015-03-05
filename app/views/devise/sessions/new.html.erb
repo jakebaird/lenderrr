@@ -1,4 +1,7 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'dialog-form') do |f| %>
+  <%- flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, id: "flash_#{name}" %>
+  <%- end -%>
   <%= f.label :login, "Username or Email" %>
   <%= f.text_field :login, html: {spellcheck: "false"}, class: 'span12', placeholder: 'Login' %>
   <br>

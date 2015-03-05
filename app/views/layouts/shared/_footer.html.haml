@@ -2,21 +2,21 @@
   .container
     .row
       .col-md-2
-        %a.bottomLogo{:href => "index2.html#home"} Lenderrr
+        = link_to "Lenderrr", root_path, class: 'bottomLogo'
       .col-md-8
         %ul.bottom-links.padding-links
           %li
-            %a{"data-easing" => "easeOutQuint", "data-scroll" => "", "data-speed" => "2000", "data-url" => "true", :href => "index2.html#home"} About
+            = link_to "About", "#", "data-easing" => "easeOutQuint", "data-scroll" => "", "data-speed" => "2000", "data-url" => "true"
           %li
-            %a{"data-easing" => "easeOutQuint", "data-scroll" => "", "data-speed" => "2000", "data-url" => "true", :href => "index2.html#about"} Privacy Policy
+            = link_to "Privacy Policy", "#", "data-easing" => "easeOutQuint", "data-scroll" => "", "data-speed" => "2000", "data-url" => "true"
           %li
-            %a{"data-easing" => "easeOutQuint", "data-scroll" => "", "data-speed" => "2000", "data-url" => "true", :href => "index2.html#Services"} Terms of Service
+            = link_to "Terms of Services", "#", "data-easing" => "easeOutQuint", "data-scroll" => "", "data-speed" => "2000", "data-url" => "true"
           %li
-            %a{"data-easing" => "easeOutQuint", "data-scroll" => "", "data-speed" => "2000", "data-url" => "true", :href => "index2.html#Portfolio"} Listing an Item
+            = link_to "Listing an Item", "#", "data-easing" => "easeOutQuint", "data-scroll" => "", "data-speed" => "2000", "data-url" => "true"
           %li
-            %a{"data-easing" => "easeOutQuint", "data-scroll" => "", "data-speed" => "2000", "data-url" => "true", :href => "index2.html#News"} Protection
+            = link_to "Protection", "#", "data-easing" => "easeOutQuint", "data-scroll" => "", "data-speed" => "2000", "data-url" => "true"
           %li
-            %a{"data-easing" => "easeOutQuint", "data-scroll" => "", "data-speed" => "2000", "data-url" => "true", :href => "index2.html#contact"} Contact
+            = link_to "Contact", "#", "data-easing" => "easeOutQuint", "data-scroll" => "", "data-speed" => "2000", "data-url" => "true"
       .col-md-2
         %ul.bottom-icons.padding-links
           %li
