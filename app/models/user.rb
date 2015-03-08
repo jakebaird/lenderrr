@@ -29,7 +29,6 @@ class User < ActiveRecord::Base
                 password: Devise.friendly_token[0,20])
   end
 
-
   attr_accessor :login
 
   validates :username,  :presence => true,
