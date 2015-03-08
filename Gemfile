@@ -40,14 +40,13 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 
-group :development, :test do
-  gem 'spring',        group: :development
-  gem 'awesome_print'
-  gem 'quiet_assets'
-  gem 'byebug'
-  gem 'thin'
-end
 
-group :production do
-  gem 'rails_12factor'
-end
+gem 'spring'
+gem 'awesome_print'
+gem 'quiet_assets'
+gem 'byebug'
+gem 'thin'
+
+
+gem 'rails_12factor'
+
