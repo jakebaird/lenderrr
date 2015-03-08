@@ -1,0 +1,20 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'dialog-form') do |f| %>
+  <%- flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, id: "flash_#{name}" %>
+  <%- end -%>
+  <%= f.label :login, "Username or Email" %>
+  <%= f.text_field :login, html: {spellcheck: "false"}, class: 'span12', placeholder: 'Login' %>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password, html: {autocomplete: "off"}, class: 'span12', placeholder: 'Password' %>
+  <br>
+  <% if devise_mapping.rememberable? -%>
+    <%= f.label :remember_me, "Remember Me" %>
+    <%= f.check_box :remember_me %>
+  <% end -%>          
+  <br>
+  <%= f.submit "Login", class: 'btn btn-primary' %>
+
+  <%#= render "devise/shared/links" %>
+
+<% end %>
