@@ -7,15 +7,29 @@
 
     #navbar-collapse-01.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
-
         - if user_signed_in?
           %li
-            = link_to "Sign Out", destroy_user_session_path, method: :delete
+            %a{"data-easing" => "easeOutQuint", "data-scroll" => "", "data-speed" => "2000", "data-toggle" => "dropdown", "data-url" => "true", :href => "index2.html#"}
+              = current_user.username
+              %span.caret
+            %span.dropdown-arrow
+            %ul.dropdown-menu
+              %li
+                %a{:href => "#"} List Item
+              %li
+                %a{:href => "#"} Inbox
+              %li
+                %a{:href => "#"} My Items
+              %li
+                %a{:href => "#"} My Account
+              %li= link_to 'Sign Out', destroy_user_session_path, method: :destroy
+
         - else
           %li
             %a.popup-text{"data-effect" => "mfp-move-from-top", "data-target" => "#signup", "data-toggle" => "modal", href: "#login-dialog"} Login
           %li
             %a.popup-text{"data-effect" => "mfp-move-from-top", "data-target" => "#login", "data-toggle" => "modal", href: "#login-dialog"} Sign up
+
 
 #signup.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
   .modal-dialog

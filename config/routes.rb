@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-
-  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }, skip: [:sessions, :registrations]
-  
   devise_for :admin_users, ActiveAdmin::Devise.config
-  
   ActiveAdmin.routes(self)
+
+  devise_for :users, :controllers => {
+    omniauth_callbacks: 'omniauth_callbacks'
+  }, skip: [:sessions, :registrations]
 
   #->Prelang (user_login:devise/stylized_paths)
   devise_scope :user do
@@ -19,7 +19,6 @@ Rails.application.routes.draw do
   end
 
   resources :items
-  
-  root 'landings#index'
 
+  root 'landings#index'
 end

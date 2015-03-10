@@ -23,8 +23,6 @@
 //= require holder
 //= require flatui-fileinput
 //= require jquery.tagsinput
-//= require jquery.placeholder
-//= require typeahead
 //= require jquery.mCustomScrollbar.concat.min
 //= require owl.carousel.min
 //= require revSlider/jquery.themepunch.plugins.min
@@ -158,9 +156,6 @@ $(document).ready(function($) {
         return "tooltip-" + $(this).prev().attr("data-tooltip-style");
       }
     });
-
-    // Placeholders for input/textarea
-    $(":text, textarea").placeholder();
 
     // Make pagination demo work
     $(".pagination").on('click', "a", function() {
