@@ -20,10 +20,23 @@
 @import "bootstrap";
 @import "flat-ui";
 @import "flaone-style";
-// @import "superslides";
 @import "jquery.mCustomScrollbar";
 @import "owl.carousel";
 @import "flexslider";
 @import "portfolio";
 @import "magnific-popup";
 @import "font-awesome";
+
+
+.form-group {
+  .checkbox {
+    label.boolean {
+      span.icons {
+        span.first-icon,
+        span.second-icon {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

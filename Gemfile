@@ -35,19 +35,19 @@ gem 'simple_form'
 gem 'nested_form'
 
 
+# server
+gem 'thin'
+
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+group :development, :test do
+  gem 'spring'
+  gem 'awesome_print'
+  gem 'quiet_assets'
+  gem 'byebug'
+end
 
-
-
-gem 'spring',        group: :development
-gem 'awesome_print'
-gem 'quiet_assets'
-gem 'byebug'
-gem 'thin'
-
-
-
-gem 'rails_12factor'
+group :production do
+  gem 'rails_12factor'
+end
