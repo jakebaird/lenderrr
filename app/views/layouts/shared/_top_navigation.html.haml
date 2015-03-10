@@ -27,7 +27,7 @@
         %h4#myModalLabel.modal-title Member Login
       .modal-body
         .row-fluid
-          = render partial: 'devise/sessions/new'
+          = render 'devise/sessions/new'
 
 #login.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
   .modal-dialog
@@ -45,12 +45,11 @@
           .col-md-6
             %h6 Regsister
             %p
-              = render partial: 'devise/registrations/new'
+              = render 'devise/registrations/new'
           .col-md-6
             %h6 Login
             %p
-              = render partial: 'devise/sessions/new'
+              = render 'devise/sessions/new'
 
         .row-fluid
 
-    

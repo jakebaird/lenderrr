@@ -29,3 +29,8 @@ en:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
+
+    placeholders:
+      user:
+        login: 'Your username or email address'
+        password: 'Your password'
