@@ -32,5 +32,8 @@ en:
 
     placeholders:
       user:
+        username: 'Your username'
+        email: 'Your email'
         login: 'Your username or email address'
         password: 'Your password'
+        password_confirmation: 'Password confirmation'
