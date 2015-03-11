@@ -1,0 +1,25 @@
+%nav#sticker.navbar.navbar-default.navbar-static-top.navbar-lg{:role => "navigation"}
+  .container
+    .navbar-header.centerMrgn
+      %button.navbar-toggle{"data-target" => "#navbar-collapse-01", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+      %a.navbar-brand{:href => "index.html"}
+        = image_tag 'slider/headerlogo.png'
+    #navbar-collapse-01.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a{"data-easing" => "easeOutQuint", "data-scroll" => "", "data-speed" => "2000", "data-toggle" => "dropdown", "data-url" => "true", :href => "index2.html#"}
+            Users Name
+            %span.caret
+          %span.dropdown-arrow
+          %ul.dropdown-menu
+            %li
+              %a{:href => "#"} List Item
+            %li
+              %a{:href => "#"} Inbox
+            %li
+              %a{:href => "index2.html"} My Items
+            %li
+              %a{:href => "index3.html"} My Account
+            %li
+              %a{:href => "index4.html"} Sign Out
