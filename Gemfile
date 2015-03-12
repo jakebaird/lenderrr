@@ -40,13 +40,13 @@ gem 'thin'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-group :development, :test do
-  gem 'spring'
-  gem 'awesome_print'
-  gem 'quiet_assets'
-  gem 'byebug'
-end
 
-group :production do
-  gem 'rails_12factor'
-end
+gem 'spring'
+gem 'awesome_print'
+gem 'quiet_assets'
+gem 'byebug'
+
+
+
+gem 'rails_12factor'
+
