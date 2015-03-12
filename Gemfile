@@ -40,10 +40,6 @@ gem 'thin'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 5dbbbb16faede4da0cf9d7b1381bd4790284ecf8
 group :development, :test do
   gem 'spring'
   gem 'awesome_print'
