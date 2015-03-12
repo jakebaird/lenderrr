@@ -64,19 +64,16 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
-
-  config.action_mailer.default_url_options    = { host: ENV['HOSTNAME'], protocol: 'http' }
-
+  config.action_mailer.default_url_options    = { :host => ENV['HOSTNAME'], :protocol => 'http' }
   config.action_mailer.delivery_method        = :smtp
-
   config.action_mailer.smtp_settings          = {
-    port:                  '587',
-    address:               'smtp.mandrillapp.com',
-    authentication:        :plain,
-    user_name:             ENV['MANDRILL_USERNAME'],
-    password:              ENV['MANDRILL_APIKEY'],
-    domain:                ENV['HOSTNAME'],
-    enable_starttls_auto:  true
+    :port                  =>  '587',
+    :address               =>  'smtp.mandrillapp.com',
+    :authentication        =>  :plain,
+    :user_name             =>  ENV['MANDRILL_USERNAME'],
+    :password              =>  ENV['MANDRILL_APIKEY'],
+    :domain                =>  ENV['HOSTNAME'],
+    :enable_starttls_auto  =>  true
   }
 
   ActionMailer::Base.delivery_method = :smtp

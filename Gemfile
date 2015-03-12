@@ -41,12 +41,13 @@ gem 'thin'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 
-gem 'spring'
-gem 'awesome_print'
-gem 'quiet_assets'
-gem 'byebug'
+group :development, :test do
+  gem 'spring'
+  gem 'awesome_print'
+  gem 'quiet_assets'
+  gem 'byebug'
+end
 
-
-
-gem 'rails_12factor'
-
+group :production do
+  gem 'rails_12factor'
+end
