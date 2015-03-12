@@ -64,6 +64,7 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
+
   config.action_mailer.default_url_options    = { host: ENV['HOSTNAME'], protocol: 'http' }
 
   config.action_mailer.delivery_method        = :smtp
@@ -95,5 +96,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 5dbbbb16faede4da0cf9d7b1381bd4790284ecf8
 end

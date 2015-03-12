@@ -1,5 +1,9 @@
 class ItemsController < ApplicationController
+
   before_filter :require_user_signed_in, only: [:new, :edit, :create, :update, :destroy]
+
+  before_filter :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
+
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items
