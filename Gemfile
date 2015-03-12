@@ -34,7 +34,6 @@ gem 'kaminari'
 gem 'simple_form'
 gem 'nested_form'
 
-
 # server
 gem 'thin'
 

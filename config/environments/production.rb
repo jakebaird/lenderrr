@@ -42,7 +42,7 @@ Rails.application.configure do
   # config.force_ssl = true
 
   # Set to :debug to see everything in the log.
-  config.log_level = :info
+  config.log_level = :debug
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -64,8 +64,10 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
-  config.action_mailer.default_url_options    = { :host => ENV['HOSTNAME'] }
+  config.action_mailer.default_url_options    = { host: ENV['HOSTNAME'], protocol: 'http' }
+
   config.action_mailer.delivery_method        = :smtp
+
   config.action_mailer.smtp_settings          = {
     port:                  '587',
     address:               'smtp.mandrillapp.com',
@@ -75,6 +77,8 @@ Rails.application.configure do
     domain:                ENV['HOSTNAME'],
     enable_starttls_auto:  true
   }
+
+  ActionMailer::Base.delivery_method = :smtp
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
