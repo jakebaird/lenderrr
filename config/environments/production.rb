@@ -67,7 +67,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options    = { :host => 'lenderrr.herokuapp.com' }
   config.action_mailer.delivery_method        = :smtp
   config.action_mailer.smtp_settings          = {
-    :port                  =>  '587',
+    :port                  =>  587,
     :address               =>  'smtp.mandrillapp.com',
     :authentication        =>  :plain,
     :user_name             =>  ENV['MANDRILL_USERNAME'],
