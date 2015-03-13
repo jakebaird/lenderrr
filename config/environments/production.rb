@@ -66,13 +66,16 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options    = { :host => 'lenderrr.herokuapp.com' }
   config.action_mailer.delivery_method        = :smtp
+  config.action_mailer.perform_deliveries     = true
+  config.action_mailer.raise_delivery_errors  = false
+  config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings          = {
     :port                  =>  587,
-    :address               =>  'smtp.mandrillapp.com',
+    :address               =>  'smtp.gmail.com',
     :authentication        =>  :plain,
-    :user_name             =>  ENV['MANDRILL_USERNAME'],
-    :password              =>  ENV['MANDRILL_APIKEY'],
-    :domain                =>  ENV['HOSTNAME'],
+    :user_name             =>  ENV["GMAIL_USERNAME"],
+    :password              =>  ENV["GMAIL_PASSWORD"],
+    :domain                =>  ENV["GMAIL_DOMAIN"],
     :enable_starttls_auto  =>  true
   }
 
