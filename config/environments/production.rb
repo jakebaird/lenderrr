@@ -64,9 +64,6 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
-  if RAILS_ENV == 'production'
-    require 'tlsmail'
-    Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
     config.action_mailer.default_url_options    = { :host => 'lenderrr.herokuapp.com' }
     config.action_mailer.delivery_method        = :smtp
     config.action_mailer.perform_deliveries     = true
@@ -81,7 +78,6 @@ Rails.application.configure do
       :domain                =>  ENV["GMAIL_DOMAIN"],
       :enable_starttls_auto  =>  true
     }
-  end
 
   ActionMailer::Base.delivery_method = :smtp
 
