@@ -64,20 +64,24 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
-  config.action_mailer.default_url_options    = { :host => 'lenderrr.herokuapp.com' }
-  config.action_mailer.delivery_method        = :smtp
-  config.action_mailer.perform_deliveries     = true
-  config.action_mailer.raise_delivery_errors  = false
-  config.action_mailer.default :charset => "utf-8"
-  config.action_mailer.smtp_settings          = {
-    :port                  =>  587,
-    :address               =>  'smtp.gmail.com',
-    :authentication        =>  :plain,
-    :user_name             =>  ENV["GMAIL_USERNAME"],
-    :password              =>  ENV["GMAIL_PASSWORD"],
-    :domain                =>  ENV["GMAIL_DOMAIN"],
-    :enable_starttls_auto  =>  true
-  }
+  if RAILS_ENV == 'production'
+    require 'tlsmail'
+    Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+    config.action_mailer.default_url_options    = { :host => 'lenderrr.herokuapp.com' }
+    config.action_mailer.delivery_method        = :smtp
+    config.action_mailer.perform_deliveries     = true
+    config.action_mailer.raise_delivery_errors  = false
+    config.action_mailer.default :charset => "utf-8"
+    config.action_mailer.smtp_settings          = {
+      :port                  =>  587,
+      :address               =>  'smtp.gmail.com',
+      :authentication        =>  :plain,
+      :user_name             =>  ENV["GMAIL_USERNAME"],
+      :password              =>  ENV["GMAIL_PASSWORD"],
+      :domain                =>  ENV["GMAIL_DOMAIN"],
+      :enable_starttls_auto  =>  true
+    }
+  end
 
   ActionMailer::Base.delivery_method = :smtp
 
