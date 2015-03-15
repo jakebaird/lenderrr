@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
         :recoverable, :rememberable, :trackable, :validatable
 
   # Email Confirmation
-  # devise :confirmable 
+  devise :confirmable 
 
   devise authentication_keys: [:login]
 
