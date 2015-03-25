@@ -53,9 +53,9 @@ $(document).ready(function(){
 owlCarousel
 =============================================== */
 $(document).ready(function() {
- 
+
   var owl = $("#owl-demo");
- 
+
   owl.owlCarousel({
       items : 3, //10 items above 1000px browser width
       itemsDesktop : [1000,5], //5 items between 1000px and 901px
@@ -63,7 +63,7 @@ $(document).ready(function() {
       itemsTablet: [600,2], //2 items between 600 and 0
       itemsMobile : [479,1] // itemsMobile disabled - inherit from itemsTablet option
   });
- 
+
   // Custom Navigation Events
   $(".next").click(function(){
     owl.trigger('owl.next');
@@ -77,13 +77,13 @@ $(document).ready(function() {
   $(".stop").click(function(){
     owl.trigger('owl.stop');
   })
- 
+
 });
 
 /* ==============================================
 LightBox Popup
 =============================================== */
-$('.popup-link').magnificPopup({ 
+$('.popup-link').magnificPopup({
 	  type: 'image'
 		// other options
 });
@@ -91,11 +91,11 @@ $('.popup-link').magnificPopup({
 Filter PortFolio
 =============================================== */
 $(function () {
-		
+
 	var filterList = {
-	
+
 		init: function () {
-		
+
 			// MixItUp plugin
 			// http://mixitup.io
 			$('#portfoliolist').mixitup({
@@ -105,39 +105,31 @@ $(function () {
 				easing: 'smooth',
 				// call the hover effect
 				onMixEnd: filterList.hoverEffect()
-			});				
-		
+			});
+
 		},
-		
+
 		hoverEffect: function () {
-		
+
 			// Simple parallax effect
 			$('#portfoliolist .portfolio').hover(
-				function () {		
-					
+				function () {
+
 				},
-				function () {			
-									
-				}		
-			);				
-		
+				function () {
+
+				}
+			);
+
 		}
 
 	};
-	
+
 	// Run the show!
 	filterList.init();
-});	
-
-
-
-//	Flex Slider	/////////////////////////////////////////////
-// Can also be used with $(document).ready()
-$(window).load(function() {
-  $('.flexslider').flexslider({
-    animation: "slider"
-  });
 });
+
+
 
 //	Google Map	/////////////////////////////////////////////
 function resize_map(){
@@ -160,18 +152,18 @@ jQuery( function(){
 		var email = ( jQuery("input[name='email']") );
 		var message = ( jQuery("textarea[name='message']") );
 		var _continue = true;
-		
+
 		jQuery( '.contact_form_msg' ).remove();
 		jQuery( name ).removeClass('empty');
 		jQuery( email ).removeClass('empty');
 		jQuery( "textarea[name='message']" ).removeClass('empty');
-		
+
 		if( jQuery.trim( jQuery( name ).val() ) == '' ){
-			
+
 			jQuery( name ).addClass("empty");
 			_continue = false;
 		} else { _continue = true; }
-		
+
 		if( jQuery.trim( jQuery( email ).val() ) == '' ){
 			jQuery( email ).addClass("empty");
 			_continue = false;
@@ -181,11 +173,11 @@ jQuery( function(){
 			jQuery( message ).addClass("empty");
 			_continue = false;
 		} else { _continue = true; }
-		
+
 		if( _continue == true ){
 			// Send Email
 			jQuery(".peThemeContactForm .button").text("Loading...");
-			
+
 			jQuery.ajax({
 				url: "mail.php",
 				type: "POST",
@@ -193,7 +185,7 @@ jQuery( function(){
 				success: function( payload ){
 					var json = jQuery.parseJSON( payload );
 					jQuery(".peThemeContactForm .button").text("Send Message");
-					
+
 					if( json.status == "empty" ){
 						jQuery( '.peThemeContactForm' ).append('<div class="contact_form_msg error" style="display: none;"><p>Please, Make sure you enter all the form fields.</p></div>');
 					} else if( json.status == "invalid_email" ){
@@ -211,7 +203,7 @@ jQuery( function(){
 			jQuery( '.peThemeContactForm .contact_form_msg' ).fadeIn( 350 );
 		}
 
-		return false;						
+		return false;
 	});
 });
 
@@ -220,7 +212,7 @@ Parallax Effect
 =============================================== */
 $(document).ready(function(){
 	$('#nav').localScroll(800);
-	
+
 	//.parallax(xPosition, speedFactor, outerHeight) options:
 	//xPosition - Horizontal position of the element
 	//inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling

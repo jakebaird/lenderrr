@@ -1,15 +1,3 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file.
-//
-// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
-// about supported directives.
-//
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui-1.10.3.custom.min
@@ -22,9 +10,6 @@
 //= require flatui-radio
 //= require holder
 //= require flatui-fileinput
-//= require jquery.tagsinput
-//= require jquery.placeholder
-//= require typeahead
 //= require jquery.mCustomScrollbar.concat.min
 //= require owl.carousel.min
 //= require revSlider/jquery.themepunch.plugins.min
@@ -86,81 +71,12 @@ $(document).ready(function($) {
     // Tooltips
     $("[data-toggle=tooltip]").tooltip("show");
 
-    // Tags Input
-    $(".tagsinput").tagsInput();
-
-    // jQuery UI Sliders
-    var $slider = $("#slider");
-    if ($slider.length > 0) {
-      $slider.slider({
-        min: 1,
-        max: 5,
-        value: 3,
-        orientation: "horizontal",
-        range: "min"
-      }).addSliderSegments($slider.slider("option").max);
-    }
-
-    var $slider2 = $("#slider2");
-    if ($slider2.length > 0) {
-      $slider2.slider({
-        min: 1,
-        max: 5,
-        values: [3, 4],
-        orientation: "horizontal",
-        range: true
-      }).addSliderSegments($slider2.slider("option").max);
-    }
-
-    var $slider3 = $("#slider3")
-      , slider3ValueMultiplier = 100
-      , slider3Options;
-
-    if ($slider3.length > 0) {
-      $slider3.slider({
-        min: 1,
-        max: 5,
-        values: [3, 4],
-        orientation: "horizontal",
-        range: true,
-        slide: function(event, ui) {
-          $slider3.find(".ui-slider-value:first")
-            .text("$" + ui.values[0] * slider3ValueMultiplier)
-            .end()
-            .find(".ui-slider-value:last")
-            .text("$" + ui.values[1] * slider3ValueMultiplier);
-        }
-      });
-
-      slider3Options = $slider3.slider("option");
-      $slider3.addSliderSegments(slider3Options.max)
-        .find(".ui-slider-value:first")
-        .text("$" + slider3Options.values[0] * slider3ValueMultiplier)
-        .end()
-        .find(".ui-slider-value:last")
-        .text("$" + slider3Options.values[1] * slider3ValueMultiplier);
-    }
-
-    var $verticalSlider = $("#vertical-slider");
-    if ($verticalSlider.length) {
-      $verticalSlider.slider({
-        min: 1,
-        max: 5,
-        value: 3,
-        orientation: "vertical",
-        range: "min"
-      }).addSliderSegments($verticalSlider.slider("option").max, "vertical");
-    }
-
     // Add style class name to a tooltips
     $(".tooltip").addClass(function() {
       if ($(this).prev().attr("data-tooltip-style")) {
         return "tooltip-" + $(this).prev().attr("data-tooltip-style");
       }
     });
-
-    // Placeholders for input/textarea
-    $(":text, textarea").placeholder();
 
     // Make pagination demo work
     $(".pagination").on('click', "a", function() {
@@ -224,39 +140,6 @@ $(document).ready(function($) {
       $this.closest('tr')[check ? 'addClass' : 'removeClass']('selected-row');
       if (toggle) $this.closest('.table').find('.toggle-all :checkbox').checkbox(checkAll ? 'check' : 'uncheck');
     });
-
-    // jQuery UI Datepicker
-    var datepickerSelector = '#datepicker-01';
-    $(datepickerSelector).datepicker({
-      showOtherMonths: true,
-      selectOtherMonths: true,
-      dateFormat: "d MM, yy",
-      yearRange: '-1:+1'
-    }).prev('.btn').on('click', function (e) {
-      e && e.preventDefault();
-      $(datepickerSelector).focus();
-    });
-    $.extend($.datepicker, {_checkOffset:function(inst,offset,isFixed){return offset}});
-
-    // Now let's align datepicker with the prepend button
-    $(datepickerSelector).datepicker('widget').css({'margin-left': -$(datepickerSelector).prev('.input-group-btn').find('.btn').outerWidth()});
-
-    // Switch
-    $("[data-toggle='switch']").wrap('<div class="switch" />').parent().bootstrapSwitch();
-
-    // Typeahead
-    if($('#typeahead-demo-01').length) {
-      $('#typeahead-demo-01').typeahead({
-        name: 'states',
-        limit: 4,
-        local: ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut",
-        "Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky",
-        "Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri",
-        "Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota",
-        "North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina",
-        "South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]
-      });
-    }
 
     // make code pretty
     window.prettyPrint && prettyPrint();

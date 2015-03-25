@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
 
-  #->Prelang (scaffolding:rails/scope_to_user)
-  before_filter :require_user_signed_in, only: [:new, :edit, :create, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
 
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
@@ -76,4 +75,5 @@ class ItemsController < ApplicationController
     def item_params
       params.require(:item).permit(:name, :location, :price, :description, :terms_and_conditions, :user_id, :item_id)
     end
+
 end

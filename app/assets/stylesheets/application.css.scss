@@ -14,16 +14,30 @@
 *
 */
 
+
+@import "settings";
 @import "bootstrap";
 @import "font-awesome";
+@import "settings";
 @import "flat-ui";
 @import "flaone-style";
-
-// wideScreen Slider With Home Section
-// REVOLUTION BANNER CSS SETTINGS
-@import "settings";
 @import "jquery.mCustomScrollbar";
 @import "owl.carousel";
 @import "flexslider";
 @import "portfolio";
 @import "magnific-popup";
+@import "font-awesome";
+
+
+.form-group {
+  .checkbox {
+    label.boolean {
+      span.icons {
+        span.first-icon,
+        span.second-icon {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

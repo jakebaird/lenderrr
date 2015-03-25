@@ -1,0 +1,13 @@
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), class: 'dialog-form') do |f| %>
+  <%- flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, id: "flash_#{name}" %>
+  <%- end -%>
+  <%= f.input :login %>
+  <%= f.input :password %>
+
+  <% if devise_mapping.rememberable? %>
+    <%= f.input :remember_me, as: :boolean %>
+  <% end %>
+
+  <%= f.submit "Login", class: 'btn btn-primary' %>
+<% end %>
